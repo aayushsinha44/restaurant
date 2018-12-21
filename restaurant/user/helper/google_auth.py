@@ -24,8 +24,8 @@ def get_value_from_token(token):
 
         email = idinfo['email']
         name = idinfo['name']
-
-        return {"email" :email, "name": name}
+        picture = idinfo['picture']
+        return {"email" :email, "name": name, "picture": picture}
         
     except ValueError:
         return GOOGLE_VALUE_ERROR

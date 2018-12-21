@@ -16,10 +16,11 @@ def login(request):
             google_values = get_value_from_token(token)
             email = google_values["email"]
             name = google_values["name"]
+            picture = google_values["picture"]
 
             if User.objects.filter(email=email).count() == 0:
                 # New User
-                User.objects.create(email=email, name=name)
+                User.objects.create(email=email, name=name, picture_url=picture)
                 user_token=create_token(email)
                 return HttpResponse(json.dumps({"success": True,
                                                 "code": HTTP_SUCCESS,
