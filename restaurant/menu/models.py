@@ -75,3 +75,16 @@ class Review(models.Model):
     review=models.TextField()
     date=models.DateTimeField(default=datetime.now)
 
+    def __str__(self):
+        return str(self.id)
+
+class ReviewItem(models.Model):
+    email=models.ForeignKey(User, on_delete=models.CASCADE)
+    item=models.ForeignKey(Item, on_delete=models.CASCADE)
+    review=models.TextField()
+    date=models.DateTimeField(default=datetime.now)
+
+    def __str__(self):
+        return str(self.id)
+
+

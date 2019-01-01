@@ -3,7 +3,7 @@ from user.helper.decorator import login_required
 from menu.models import Item
 from user.helper.constants import HTTP_SUCCESS, HTTP_UNAUTHORIZED, HTTP_NOT_ACCEPTABLE
 from django.views.decorators.csrf import csrf_exempt
-from menu.helper.item import ItemObject
+from menu.helper import ItemObject
 import json
 
 @csrf_exempt
